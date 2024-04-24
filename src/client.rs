@@ -16,9 +16,9 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let req = proto::CalcReq { a: 4, b: 5 };
     let request = Request::new(req);
 
-    let responce = client.add(request).await?;
+    let response = client.add(request).await?;
 
-    println!("Resp: {:?}", responce.get_ref().result);
+    println!("Resp: {:?}", response.get_ref().result);
 
     Ok(())
 }
