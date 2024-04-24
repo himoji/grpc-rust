@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package client;
+package calculator;
 
 service Calculator {
   rpc Add(CalcReq) returns (CalcResp);

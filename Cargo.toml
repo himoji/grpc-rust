@@ -1,14 +1,25 @@
 [package]
 name = "clientservergrpc"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
-
+build = "build.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 tonic = "0.11.0"
 tokio = { version = "1", features = ["full"] }
 prost = "0.12.4"
+prost-build = "0.12.4"
+tonic-build = "0.11.0"
+tonic-reflection = "0.11.0"
 
 [build-dependencies]
 tonic-build = "0.11.0"
+
+[[bin]]
+name = "server"
+path = "src/main.rs"
+
+[[bin]]
+name = "client"
+path = "src/client.rs"

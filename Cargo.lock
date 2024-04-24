@@ -169,12 +169,14 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
 name = "clientservergrpc"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "prost",
+ "prost-build",
  "tokio",
  "tonic",
  "tonic-build",
+ "tonic-reflection",
 ]
 
 [[package]]
@@ -961,6 +963,19 @@ dependencies = [
  "prost-build",
  "quote",
  "syn",
+]
+
+[[package]]
+name = "tonic-reflection"
+version = "0.11.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "548c227bd5c0fae5925812c4ec6c66ffcfced23ea370cb823f4d18f0fc1cb6a7"
+dependencies = [
+ "prost",
+ "prost-types",
+ "tokio",
+ "tokio-stream",
+ "tonic",
 ]
 
 [[package]]
