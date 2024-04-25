@@ -19,11 +19,23 @@ mod client;
 
 #[tonic::async_trait]
 impl Calculator for CalculatorService {
-    async fn add(&self, request: Request<CalcReq>) -> Result<Response<CalcResp>, Status> {
+    async fn func(&self, request: Request<CalcReq>) -> Result<Response<CalcResp>, Status> {
         println!("req: {:?}", request);
         let input = request.get_ref();
-        let resp = CalcResp {
-            result: input.a + input.b,
+        let resp = match input.c.as_str() {
+            "+" => CalcResp {
+                result: input.a + input.b,
+            },
+            "-" => CalcResp {
+                result: input.a + input.b,
+            },
+            "/" => CalcResp {
+                result: input.a + input.b,
+            },
+            "*" => CalcResp {
+                result: input.a + input.b,
+            },
+            &_ => CalcResp { result: 0 },
         };
 
         Ok(Response::new(resp))

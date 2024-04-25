@@ -3,12 +3,13 @@ syntax = "proto3";
 package calculator;
 
 service Calculator {
-  rpc Add(CalcReq) returns (CalcResp);
+  rpc Func(CalcReq) returns (CalcResp);
 }
 
 message CalcReq {
-    int64 a = 1;
-    int64 b = 2;
+  int64 a = 1;
+  int64 b = 2;
+  string c = 3;
 }
 
 message CalcResp{int64 result = 1;}
