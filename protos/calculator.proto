@@ -13,3 +13,11 @@ message CalcReq {
 }
 
 message CalcResp{int64 result = 1;}
+
+service Admin {
+  rpc GetReqCount(GetCountReq) returns (CounterResp);
+}
+message GetCountReq {}
+message CounterResp {
+  uint64 count = 1;
+}
